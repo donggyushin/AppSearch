@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StarRatingView: UIView {
+final class StarRatingView: UIView {
     private var rating: CGFloat = 0 {
         didSet {
             updateStarRatings()
