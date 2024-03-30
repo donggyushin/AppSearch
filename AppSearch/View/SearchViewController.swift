@@ -14,6 +14,6 @@ class SearchViewController: UIViewController {
     }
     
     private func configUI() {
-        view.backgroundColor = .red
+        
     }
 }
