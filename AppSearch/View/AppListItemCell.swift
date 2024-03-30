@@ -57,9 +57,24 @@ final class AppListItemCell: UITableViewCell {
         return view
     }()
     
+    private lazy var starRatingNumberView: UILabel = {
+        let view = UILabel()
+        view.font = .systemFont(ofSize: UIFont.smallSystemFontSize)
+        view.textColor = .secondaryLabel
+        return view
+    }()
+    
     private lazy var starRatingViewContainer: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [starRatingView, UIView()])
+        let view = UIStackView(arrangedSubviews: [starRatingView, starRatingNumberView, UIView()])
         view.axis = .horizontal
+        return view
+    }()
+    
+    private lazy var imageCollectionView: ImageCollectionView = {
+        let view = ImageCollectionView()
+        view.snp.makeConstraints { make in
+            make.height.equalTo(210)
+        }
         return view
     }()
     
@@ -81,6 +96,7 @@ final class AppListItemCell: UITableViewCell {
     
     override func prepareForReuse() {
         iconView.image = nil
+        imageCollectionView.removeFromSuperview()
     }
     
     func configUI(app: App) {
@@ -88,13 +104,21 @@ final class AppListItemCell: UITableViewCell {
         nameView.text = app.trackName
         genresView.text = app.genres.joined(separator: ",")
         starRatingView.set(rating: app.averageUserRating)
+        starRatingNumberView.text = app.formattedAverageUserRating
+        
+        let images = app.screenshotUrls.prefix(3).map({ String($0) })
+        if images.isEmpty == false {
+            imageCollectionView.images = images
+            verticalStackView.addArrangedSubview(imageCollectionView)
+        }
     }
     
     private func configUI() {
         selectionStyle = .none
         addSubview(verticalStackView)
         verticalStackView.snp.makeConstraints { make in
-            make.edges.equalToSuperview().inset(20)
+            make.left.right.equalToSuperview().inset(10)
+            make.top.bottom.equalToSuperview().inset(20)
         }
     }
 }
