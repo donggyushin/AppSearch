@@ -17,7 +17,7 @@ final class AppSearchViewModelTests: XCTestCase {
         func postSearchHistory(query: String) throws { }
     }
     
-    func testExample() throws {
+    func testSetSearchQueryHistories() throws {
         let viewModel: SearchViewModel = .init(appRepository: AppRepositoryTest())
         let allSearchQueryHistories: [String] = [
         "search1",
