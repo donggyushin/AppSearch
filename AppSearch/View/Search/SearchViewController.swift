@@ -27,6 +27,12 @@ final class SearchViewController: UIViewController {
         return view
     }()
     
+    private lazy var loadingIndicator: UIActivityIndicatorView = {
+        let view = UIActivityIndicatorView()
+        view.center = self.view.center
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -48,6 +54,8 @@ final class SearchViewController: UIViewController {
         searchHistoryTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        view.addSubview(loadingIndicator)
     }
     
     private func bind() {
@@ -68,6 +76,15 @@ final class SearchViewController: UIViewController {
         viewModel.updateSearchQuery
             .sink { text in
                 self.searchController.searchBar.text = text
+            }
+            .store(in: &viewModel.cancellables)
+        
+        viewModel
+            .$loading
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { loading in
+                loading ? self.loadingIndicator.startAnimating() : self.loadingIndicator.stopAnimating()
             }
             .store(in: &viewModel.cancellables)
         

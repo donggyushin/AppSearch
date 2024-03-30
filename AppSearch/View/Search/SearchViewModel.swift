@@ -76,13 +76,15 @@ final class SearchViewModel {
     }
     
     private func search() {
-        try? appRepository.postSearchHistory(query: searchQuery)
-        refreshAllSearchQueryHistories()
         Task {
             do {
                 guard loading == false else { return }
                 loading = true
                 apps = try await appRepository.get(query: searchQuery)
+                if apps.isEmpty == false {
+                    try? appRepository.postSearchHistory(query: searchQuery)
+                    refreshAllSearchQueryHistories()
+                }
                 loading = false
             } catch {
                 loading = false
