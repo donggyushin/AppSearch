@@ -26,6 +26,8 @@ final class AppSearchViewModelTests: XCTestCase {
     
     func testSetSearchQueryHistories2() {
         let viewModel: SearchViewModel = .init(appRepository: AppRepositoryTest())
+        XCTAssertEqual(viewModel.searchQueryHistories, ["search1", "seaRch2", "searCh3", "saerch4"])
+        
         viewModel.searchQueryUpdated(query: "search")
         XCTAssertEqual(viewModel.searchQueryHistories, ["search1", "seaRch2", "searCh3"])
         
