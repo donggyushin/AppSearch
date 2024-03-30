@@ -2,6 +2,12 @@
 
 itune search API를 이용하여 구현한 AppStore clone project
 
+<div>
+  <img src="https://github.com/donggyushin/AppSearch/assets/34573243/a15f4040-294e-4a3a-94ce-0c73aa088dc2" width=200 />
+  <img src="https://github.com/donggyushin/AppSearch/assets/34573243/fe083c1a-a1e4-48c5-b393-729122730c98" width=200 />
+  <img src="https://github.com/donggyushin/AppSearch/assets/34573243/b3461c6b-6463-4ef7-9349-8247f3d3d7ef" width=200 />
+</div>
+
 ## Library
 
 - [SDWebImage](https://github.com/SDWebImage/SDWebImage)
