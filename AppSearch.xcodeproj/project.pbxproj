@@ -18,6 +18,7 @@
 		7085A5C52BB7F3C100D5294D /* SearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085A5B52BB7F03600D5294D /* SearchViewModel.swift */; };
 		7085A5C62BB7F3FA00D5294D /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A22BB7E0730050CCE1 /* AppRepository.swift */; };
 		7085A5C72BB7F40100D5294D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A02BB7DADE0050CCE1 /* App.swift */; };
+		7085A5C92BB7FB7000D5294D /* AppListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085A5C82BB7FB7000D5294D /* AppListItemCell.swift */; };
 		70F4429A2BB7D29F0050CCE1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442992BB7D29F0050CCE1 /* APIClient.swift */; };
 		70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4429B2BB7D3B30050CCE1 /* CustomError.swift */; };
 		70F442A12BB7DADE0050CCE1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A02BB7DADE0050CCE1 /* App.swift */; };
@@ -52,6 +53,7 @@
 		7085A5B52BB7F03600D5294D /* SearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewModel.swift; sourceTree = "<group>"; };
 		7085A5BB2BB7F35E00D5294D /* AppSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AppSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		7085A5BD2BB7F35E00D5294D /* AppSearchViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchViewModelTests.swift; sourceTree = "<group>"; };
+		7085A5C82BB7FB7000D5294D /* AppListItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppListItemCell.swift; sourceTree = "<group>"; };
 		70F442992BB7D29F0050CCE1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		70F4429B2BB7D3B30050CCE1 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		70F442A02BB7DADE0050CCE1 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				702DBF4F2BB7CCF3002BB1D6 /* SearchViewController.swift */,
 				7085A5B52BB7F03600D5294D /* SearchViewModel.swift */,
+				7085A5C82BB7FB7000D5294D /* AppListItemCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -309,6 +312,7 @@
 				70F442A12BB7DADE0050CCE1 /* App.swift in Sources */,
 				70F442A62BB7E0A60050CCE1 /* AppSearchResponse.swift in Sources */,
 				70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */,
+				7085A5C92BB7FB7000D5294D /* AppListItemCell.swift in Sources */,
 				70F442A32BB7E0730050CCE1 /* AppRepository.swift in Sources */,
 				70F442B72BB7E4870050CCE1 /* SearchHistory+CoreDataClass.swift in Sources */,
 				70F442B82BB7E4870050CCE1 /* SearchHistory+CoreDataProperties.swift in Sources */,
