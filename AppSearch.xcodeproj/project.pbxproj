@@ -13,6 +13,8 @@
 		7071DC022BB7C54C0037BC1F /* AppSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 7071DC002BB7C54C0037BC1F /* AppSearch.xcdatamodeld */; };
 		7071DC042BB7C54D0037BC1F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7071DC032BB7C54D0037BC1F /* Assets.xcassets */; };
 		7071DC072BB7C54D0037BC1F /* Base in Resources */ = {isa = PBXBuildFile; fileRef = 7071DC062BB7C54D0037BC1F /* Base */; };
+		70F4429A2BB7D29F0050CCE1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442992BB7D29F0050CCE1 /* APIClient.swift */; };
+		70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4429B2BB7D3B30050CCE1 /* CustomError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		7071DC032BB7C54D0037BC1F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7071DC062BB7C54D0037BC1F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7071DC082BB7C54D0037BC1F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		70F442992BB7D29F0050CCE1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
+		70F4429B2BB7D3B30050CCE1 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +62,7 @@
 			children = (
 				7071DBF72BB7C54C0037BC1F /* AppDelegate.swift */,
 				7071DBF92BB7C54C0037BC1F /* SceneDelegate.swift */,
+				70F4429B2BB7D3B30050CCE1 /* CustomError.swift */,
 				7071DC032BB7C54D0037BC1F /* Assets.xcassets */,
 				7071DC052BB7C54D0037BC1F /* LaunchScreen.storyboard */,
 			);
@@ -94,9 +99,18 @@
 				7071DC082BB7C54D0037BC1F /* Info.plist */,
 				702DBF522BB7CE36002BB1D6 /* Main */,
 				702DBF512BB7CE2A002BB1D6 /* Model */,
+				70F442982BB7D28D0050CCE1 /* Util */,
 				702DBF4E2BB7CCDE002BB1D6 /* View */,
 			);
 			path = AppSearch;
+			sourceTree = "<group>";
+		};
+		70F442982BB7D28D0050CCE1 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				70F442992BB7D29F0050CCE1 /* APIClient.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -172,7 +186,9 @@
 				702DBF502BB7CCF3002BB1D6 /* SearchViewController.swift in Sources */,
 				7071DC022BB7C54C0037BC1F /* AppSearch.xcdatamodeld in Sources */,
 				7071DBF82BB7C54C0037BC1F /* AppDelegate.swift in Sources */,
+				70F4429A2BB7D29F0050CCE1 /* APIClient.swift in Sources */,
 				7071DBFA2BB7C54C0037BC1F /* SceneDelegate.swift in Sources */,
+				70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
