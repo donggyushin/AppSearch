@@ -16,4 +16,13 @@ final class MainCoordinator: Coordinator {
     func toAppDetail(from: UIViewController, app: App) {
         navigationController?.pushViewController(DetailViewController(app: app), animated: true)
     }
+    
+    func openAppStore(appId: String) {
+        guard let url = URL(string: "https://apps.apple.com/app/id\(appId)") else { return }
+        UIApplication.shared.open(url)
+    }
+    
+    func openAppStore(appId: Int) {
+        openAppStore(appId: "\(appId)")
+    }
 }

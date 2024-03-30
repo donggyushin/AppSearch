@@ -10,4 +10,6 @@ import UIKit
 protocol Coordinator {
     var navigationController: UINavigationController? { get set }
     func toAppDetail(from: UIViewController, app: App)
+    func openAppStore(appId: String)
+    func openAppStore(appId: Int)
 }

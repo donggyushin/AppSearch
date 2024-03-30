@@ -219,7 +219,6 @@
 		70E40D382BB8477600D7FAD4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				7085A5C82BB7FB7000D5294D /* AppListItemCell.swift */,
 				7085A5DC2BB82DCC00D5294D /* ExpandableTextView.swift */,
 				7085A5D12BB804B300D5294D /* StarRatingView.swift */,
 				7085A5D92BB8131B00D5294D /* ImageCollectionView */,
@@ -230,6 +229,7 @@
 		70E40D392BB8478300D7FAD4 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				7085A5C82BB7FB7000D5294D /* AppListItemCell.swift */,
 				702DBF4F2BB7CCF3002BB1D6 /* SearchViewController.swift */,
 				7085A5B52BB7F03600D5294D /* SearchViewModel.swift */,
 			);
