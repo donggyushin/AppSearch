@@ -30,4 +30,16 @@ struct App: Decodable {
     let trackName: String
     let userRatingCount: Int
     let version: String
+    
+    var formattedAverageUserRating: String {
+        let formatter = NumberFormatter()
+        formatter.minimumFractionDigits = 0
+        formatter.maximumFractionDigits = 1
+
+        if let formattedNumber = formatter.string(from: NSNumber(value: averageUserRating)) {
+            return formattedNumber
+        } else {
+            return "\(averageUserRating)"
+        }
+    }
 }
