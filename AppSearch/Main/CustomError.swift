@@ -11,4 +11,5 @@ enum CustomError: Error {
     case failEncoding
     case invalidUrl
     case serverError
+    case unknown
 }
