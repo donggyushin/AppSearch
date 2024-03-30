@@ -24,7 +24,7 @@ extension DetailViewController {
             view.snp.makeConstraints { make in
                 make.width.height.equalTo(80)
             }
-            view.layer.cornerRadius = 8
+            view.layer.cornerRadius = 18
             view.clipsToBounds = true
             return view
         }()

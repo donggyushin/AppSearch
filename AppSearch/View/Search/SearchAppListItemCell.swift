@@ -17,7 +17,7 @@ final class AppListItemCell: UITableViewCell {
         view.snp.makeConstraints { make in
             make.width.height.equalTo(60)
         }
-        view.layer.cornerRadius = 8
+        view.layer.cornerRadius = 12
         view.contentMode = .scaleAspectFit
         view.clipsToBounds = true
         return view
