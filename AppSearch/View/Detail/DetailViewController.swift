@@ -21,14 +21,26 @@ final class DetailViewController: UIViewController {
         return view
     }()
     
+    private lazy var newsView: NewsView = {
+        let view = NewsView()
+        view.configUI(version: app.version, releaseNotes: app.releaseNotes ?? "")
+        return view
+    }()
+    
     private lazy var preview: Preview = {
         let view = Preview()
         view.set(images: app.screenshotUrls)
         return view
     }()
     
+    private lazy var infoView: InfoView = {
+        let view = InfoView()
+        view.configUI(description: app.description)
+        return view
+    }()
+    
     private lazy var verticalStackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [headerView, Divider(), preview, UIView()])
+        let view = UIStackView(arrangedSubviews: [headerView, Divider(), newsView, Divider(), preview, Divider(), infoView, UIView()])
         view.axis = .vertical
         return view
     }()
@@ -71,6 +83,5 @@ final class DetailViewController: UIViewController {
 extension DetailViewController: DetailHeaderDelegate {
     func tapDownloadButton(appId: Int) {
         coordinator.openAppStore(appId: appId)
-        print(appId)
     }
 }
