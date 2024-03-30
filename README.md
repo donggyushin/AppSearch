@@ -28,3 +28,15 @@ itune search API를 이용하여 구현한 AppStore clone project
 ### MVVM
 
 - 비동기 이벤트를 처리하는 선언적 Swift API인 Combine을 통해 뷰와 비즈니스 로직 사이의 결합도를 낮추고 뷰를 선언적으로 구현하였습니다.
+
+
+## Main Components
+- ApiClient
+  - Swift Concurrency를 통해 async/await 문법을 사용하여 비동기 코드를 동기 코드처럼 간결하고 표현력있게 작성 할 수 있도록 작업
+- ImageCollectionView
+  - cellCountInScreen: 화면에 cellCountInScreen 만큼의 cell 을 보여줄 수 있도록 재사용성 높게 작업
+
+
+## Tests
+- [x] 최근 검색어 일치 항목 리스트 표시
+- [x] averageUserRating를 통해 유저에게 올바른 별점만큼 String 타입으로 변환
