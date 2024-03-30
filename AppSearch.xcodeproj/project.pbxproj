@@ -21,6 +21,8 @@
 		70F442A82BB7E0E50050CCE1 /* AppRepositoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A72BB7E0E50050CCE1 /* AppRepositoryAPI.swift */; };
 		70F442AA2BB7E2250050CCE1 /* AppRepositoryDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A92BB7E2250050CCE1 /* AppRepositoryDomain.swift */; };
 		70F442AC2BB7E26F0050CCE1 /* AppRepositoryCoreData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442AB2BB7E26F0050CCE1 /* AppRepositoryCoreData.swift */; };
+		70F442B72BB7E4870050CCE1 /* SearchHistory+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442B52BB7E4870050CCE1 /* SearchHistory+CoreDataClass.swift */; };
+		70F442B82BB7E4870050CCE1 /* SearchHistory+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442B62BB7E4870050CCE1 /* SearchHistory+CoreDataProperties.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		70F442A72BB7E0E50050CCE1 /* AppRepositoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryAPI.swift; sourceTree = "<group>"; };
 		70F442A92BB7E2250050CCE1 /* AppRepositoryDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryDomain.swift; sourceTree = "<group>"; };
 		70F442AB2BB7E26F0050CCE1 /* AppRepositoryCoreData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryCoreData.swift; sourceTree = "<group>"; };
+		70F442B52BB7E4870050CCE1 /* SearchHistory+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchHistory+CoreDataClass.swift"; sourceTree = "<group>"; };
+		70F442B62BB7E4870050CCE1 /* SearchHistory+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SearchHistory+CoreDataProperties.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +90,8 @@
 		702DBF532BB7CE45002BB1D6 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				70F442B52BB7E4870050CCE1 /* SearchHistory+CoreDataClass.swift */,
+				70F442B62BB7E4870050CCE1 /* SearchHistory+CoreDataProperties.swift */,
 				7071DC002BB7C54C0037BC1F /* AppSearch.xcdatamodeld */,
 			);
 			path = CoreData;
@@ -237,6 +243,8 @@
 				70F442A62BB7E0A60050CCE1 /* AppSearchResponse.swift in Sources */,
 				70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */,
 				70F442A32BB7E0730050CCE1 /* AppRepository.swift in Sources */,
+				70F442B72BB7E4870050CCE1 /* SearchHistory+CoreDataClass.swift in Sources */,
+				70F442B82BB7E4870050CCE1 /* SearchHistory+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
