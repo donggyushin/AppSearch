@@ -34,7 +34,7 @@ itune search API를 이용하여 구현한 AppStore clone project
 - ApiClient
   - Swift Concurrency를 통해 async/await 문법을 사용하여 비동기 코드를 동기 코드처럼 간결하고 표현력있게 작성 할 수 있도록 작업
 - ImageCollectionView
-  - cellCountInScreen: 화면에 cellCountInScreen 만큼의 cell 을 보여줄 수 있도록 재사용성 높게 작업
+  - 화면에 cellCountInScreen 만큼의 cell 을 보여줄 수 있도록 재사용성 높게 작업
 
 
 ## Tests
