@@ -91,6 +91,14 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.tapEnter()
     }
+    
+    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+        viewModel.searchBarTextDidBeginEditing()
+    }
+    
+    func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
+        viewModel.searchBarTextDidEndEditing()
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {

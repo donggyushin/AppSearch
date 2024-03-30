@@ -26,8 +26,18 @@ final class SearchViewModel {
     
     init(appRepository: AppRepository) {
         self.appRepository = appRepository
-        allSearchQueryHistories = (try? appRepository.getSearchHistory()) ?? []
+        refreshAllSearchQueryHistories()
         bind()
+    }
+    
+    func searchBarTextDidBeginEditing() {
+        renderingMode = .searchHistory
+    }
+    
+    func searchBarTextDidEndEditing() {
+        if apps.isEmpty == false {
+            renderingMode = .apps
+        }
     }
     
     func searchQueryUpdated(query: String) {
@@ -36,6 +46,7 @@ final class SearchViewModel {
     
     func tapEnter() {
         try? appRepository.postSearchHistory(query: searchQuery)
+        refreshAllSearchQueryHistories()
         Task {
             do {
                 guard loading == false else { return }
@@ -70,5 +81,9 @@ final class SearchViewModel {
                 self.renderingMode = apps.isEmpty ? .searchHistory : .apps
             }
             .store(in: &cancellables)
+    }
+    
+    private func refreshAllSearchQueryHistories() {
+        allSearchQueryHistories = (try? appRepository.getSearchHistory()) ?? allSearchQueryHistories
     }
 }
