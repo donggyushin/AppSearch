@@ -19,10 +19,10 @@ final class SearchViewModel {
     @Published private(set) var apps: [App] = []
     @Published private(set) var loading = false
     @Published private(set) var searchQuery: String = ""
+    @Published private(set) var searchQueryForBinding: String = ""
     @Published private(set) var searchQueryHistories: [String] = []
     @Published private(set) var renderingMode: RenderingMode = .searchHistory
     
-    private(set) var updateSearchQuery: PassthroughSubject<String, Never> = .init()
     private(set) var searchCompleted: PassthroughSubject<(), Never> = .init()
     
     @Published private var allSearchQueryHistories: [String] = []
@@ -53,14 +53,14 @@ final class SearchViewModel {
     
     func tapSearchQuery(query: String) {
         searchQuery = query
+        searchQueryForBinding = query
         search()
-        updateSearchQuery.send(query)
     }
     
     func tapCancel() {
         apps = []
         searchQuery = ""
-        updateSearchQuery.send("")
+        searchQueryForBinding = ""
     }
     
     private func bind() {

@@ -73,7 +73,8 @@ final class SearchViewController: UIViewController {
             }
             .store(in: &viewModel.cancellables)
         
-        viewModel.updateSearchQuery
+        viewModel.$searchQueryForBinding
+            .receive(on: DispatchQueue.main)
             .sink { text in
                 self.searchController.searchBar.text = text
             }
