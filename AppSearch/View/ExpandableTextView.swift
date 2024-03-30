@@ -10,13 +10,20 @@ import SnapKit
 
 class ExpandableTextView: UIView {
     private let descriptionLabel = UILabel()
-    private let moreButton = UIButton(type: .system)
+    
+    private lazy var moreButton: UIButton = {
+        let view = UIButton(type: .system)
+        view.setTitle("더보기", for: .normal)
+        return view
+    }()
     
     private var isExpanded = false {
         didSet {
             descriptionLabel.numberOfLines = isExpanded ? 0 : maximumNumberOfLines
-            moreButton.setTitle(isExpanded ? "접기" : "더보기", for: .normal)
-            layoutIfNeeded() // 확장/축소 시 레이아웃 업데이트
+            if isExpanded {
+                moreButton.isHidden = true
+            }
+            layoutIfNeeded()
         }
     }
     
@@ -35,30 +42,30 @@ class ExpandableTextView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupViews()
-        setupConstraints()
+        configUI()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        setupViews()
-        setupConstraints()
     }
     
-    private func setupViews() {
+    override func layoutSubviews() {
+        super.layoutSubviews()
+        checkTextLength()
+    }
+    
+    private func configUI() {
         descriptionLabel.numberOfLines = maximumNumberOfLines
         descriptionLabel.lineBreakMode = .byTruncatingTail
         addSubview(descriptionLabel)
         
-        moreButton.setTitle("더보기", for: .normal)
-        moreButton.addTarget(self, action: #selector(toggleExpansion), for: .touchUpInside)
-        addSubview(moreButton)
-    }
-    
-    private func setupConstraints() {
         descriptionLabel.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview()
         }
+        
+        moreButton.setTitle("더보기", for: .normal)
+        moreButton.addTarget(self, action: #selector(expand), for: .touchUpInside)
+        addSubview(moreButton)
         
         moreButton.snp.makeConstraints { make in
             make.top.equalTo(descriptionLabel.snp.bottom).offset(5)
@@ -75,20 +82,13 @@ class ExpandableTextView: UIView {
         let maxWidth = descriptionLabel.bounds.width
         let size = tempLabel.sizeThatFits(CGSize(width: maxWidth, height: CGFloat.greatestFiniteMagnitude))
         
-        if size.height > descriptionLabel.font.lineHeight * CGFloat(maximumNumberOfLines) {
-            moreButton.isHidden = false
-        } else {
+        if size.height <= descriptionLabel.font.lineHeight * CGFloat(maximumNumberOfLines) {
             moreButton.isHidden = true
         }
     }
     
-    @objc private func toggleExpansion() {
-        isExpanded.toggle()
-    }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        checkTextLength()
+    @objc private func expand() {
+        isExpanded = true
     }
 }
 
