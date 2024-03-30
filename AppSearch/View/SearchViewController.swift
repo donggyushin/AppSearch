@@ -22,6 +22,7 @@ final class SearchViewController: UIViewController {
     private lazy var searchHistoryTableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.dataSource = self
+        view.delegate = self
         return view
     }()
     
@@ -60,6 +61,12 @@ final class SearchViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { query in
                 self.searchHistoryTableView.reloadData()
+            }
+            .store(in: &viewModel.cancellables)
+        
+        viewModel.updateSearchQuery
+            .sink { text in
+                self.searchController.searchBar.text = text
             }
             .store(in: &viewModel.cancellables)
         
@@ -123,6 +130,15 @@ extension SearchViewController: UITableViewDataSource {
             let app = viewModel.apps[indexPath.row]
             cell.configUI(app: app)
             return cell
+        }
+    }
+}
+
+extension SearchViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if tableView == searchHistoryTableView {
+            let query = viewModel.searchQueryHistories[indexPath.row]
+            viewModel.tapSearchQuery(query: query)
         }
     }
 }

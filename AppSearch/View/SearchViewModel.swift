@@ -22,6 +22,8 @@ final class SearchViewModel {
     @Published private(set) var searchQueryHistories: [String] = []
     @Published private(set) var renderingMode: RenderingMode = .searchHistory
     
+    private(set) var updateSearchQuery: PassthroughSubject<String, Never> = .init()
+    
     @Published private var allSearchQueryHistories: [String] = []
     
     init(appRepository: AppRepository) {
@@ -45,19 +47,13 @@ final class SearchViewModel {
     }
     
     func tapEnter() {
-        try? appRepository.postSearchHistory(query: searchQuery)
-        refreshAllSearchQueryHistories()
-        Task {
-            do {
-                guard loading == false else { return }
-                loading = true
-                apps = try await appRepository.get(query: searchQuery)
-                loading = false
-            } catch {
-                loading = false
-            }
-            
-        }
+        search()
+    }
+    
+    func tapSearchQuery(query: String) {
+        searchQuery = query
+        search()
+        updateSearchQuery.send(query)
     }
     
     func setSearchQueryHistories(searchQuery: String, allSearchQueryHistories: [String]) -> [String] {
@@ -85,5 +81,21 @@ final class SearchViewModel {
     
     private func refreshAllSearchQueryHistories() {
         allSearchQueryHistories = (try? appRepository.getSearchHistory()) ?? allSearchQueryHistories
+    }
+    
+    private func search() {
+        try? appRepository.postSearchHistory(query: searchQuery)
+        refreshAllSearchQueryHistories()
+        Task {
+            do {
+                guard loading == false else { return }
+                loading = true
+                apps = try await appRepository.get(query: searchQuery)
+                loading = false
+            } catch {
+                loading = false
+            }
+            
+        }
     }
 }
