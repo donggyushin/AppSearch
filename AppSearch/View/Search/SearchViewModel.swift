@@ -57,6 +57,12 @@ final class SearchViewModel {
         updateSearchQuery.send(query)
     }
     
+    func tapCancel() {
+        apps = []
+        searchQuery = ""
+        updateSearchQuery.send("")
+    }
+    
     private func bind() {
         $searchQuery
             .combineLatest($allSearchQueryHistories)
@@ -91,7 +97,6 @@ final class SearchViewModel {
             } catch {
                 loading = false
             }
-            
         }
     }
     

@@ -132,6 +132,10 @@ extension SearchViewController: UISearchBarDelegate {
     func searchBarTextDidEndEditing(_ searchBar: UISearchBar) {
         viewModel.searchBarTextDidEndEditing()
     }
+    
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        viewModel.tapCancel()
+    }
 }
 
 extension SearchViewController: UITableViewDataSource {
