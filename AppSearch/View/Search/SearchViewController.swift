@@ -103,6 +103,14 @@ final class SearchViewController: UIViewController {
                 }
             }
             .store(in: &viewModel.cancellables)
+        
+        viewModel
+            .searchCompleted
+            .receive(on: DispatchQueue.main)
+            .sink {
+                self.searchController.searchBar.resignFirstResponder()
+            }
+            .store(in: &viewModel.cancellables)
     }
 }
 

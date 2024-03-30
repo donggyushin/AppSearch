@@ -23,6 +23,7 @@ final class SearchViewModel {
     @Published private(set) var renderingMode: RenderingMode = .searchHistory
     
     private(set) var updateSearchQuery: PassthroughSubject<String, Never> = .init()
+    private(set) var searchCompleted: PassthroughSubject<(), Never> = .init()
     
     @Published private var allSearchQueryHistories: [String] = []
     
@@ -84,6 +85,7 @@ final class SearchViewModel {
                 if apps.isEmpty == false {
                     try? appRepository.postSearchHistory(query: searchQuery)
                     refreshAllSearchQueryHistories()
+                    searchCompleted.send()
                 }
                 loading = false
             } catch {
