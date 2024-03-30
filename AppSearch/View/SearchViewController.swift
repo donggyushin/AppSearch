@@ -11,6 +11,7 @@ class SearchViewController: UISearchController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
+        
     }
     
     private func configUI() {
