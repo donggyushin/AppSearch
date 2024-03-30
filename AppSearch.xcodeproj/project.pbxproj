@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		702DBF502BB7CCF3002BB1D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702DBF4F2BB7CCF3002BB1D6 /* SearchViewController.swift */; };
 		7071DBF82BB7C54C0037BC1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071DBF72BB7C54C0037BC1F /* AppDelegate.swift */; };
 		7071DBFA2BB7C54C0037BC1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071DBF92BB7C54C0037BC1F /* SceneDelegate.swift */; };
 		7071DBFC2BB7C54C0037BC1F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071DBFB2BB7C54C0037BC1F /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		702DBF4F2BB7CCF3002BB1D6 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		7071DBF42BB7C54C0037BC1F /* AppSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AppSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7071DBF72BB7C54C0037BC1F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		7071DBF92BB7C54C0037BC1F /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +61,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		702DBF4E2BB7CCDE002BB1D6 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				702DBF4F2BB7CCF3002BB1D6 /* SearchViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		7071DBEB2BB7C54C0037BC1F = {
 			isa = PBXGroup;
 			children = (
@@ -80,6 +90,7 @@
 		7071DBF62BB7C54C0037BC1F /* AppSearch */ = {
 			isa = PBXGroup;
 			children = (
+				702DBF4E2BB7CCDE002BB1D6 /* View */,
 				7071DBF72BB7C54C0037BC1F /* AppDelegate.swift */,
 				7071DBF92BB7C54C0037BC1F /* SceneDelegate.swift */,
 				7071DBFB2BB7C54C0037BC1F /* ViewController.swift */,
@@ -201,6 +212,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				702DBF502BB7CCF3002BB1D6 /* SearchViewController.swift in Sources */,
 				7071DBFC2BB7C54C0037BC1F /* ViewController.swift in Sources */,
 				7071DC022BB7C54C0037BC1F /* AppSearch.xcdatamodeld in Sources */,
 				7071DBF82BB7C54C0037BC1F /* AppDelegate.swift in Sources */,
