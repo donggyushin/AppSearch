@@ -23,7 +23,7 @@ class StarRatingView: UIView {
             imageView.image = UIImage(systemName: "star")
             imageView.tintColor = .gray
             imageView.snp.makeConstraints { make in
-                make.width.height.equalTo(20)
+                make.width.height.equalTo(15)
             }
             views.append(imageView)
         }
