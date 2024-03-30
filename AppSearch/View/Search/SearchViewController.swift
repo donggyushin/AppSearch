@@ -14,6 +14,7 @@ final class SearchViewController: UIViewController {
     private lazy var appsTableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.dataSource = self
+        view.delegate = self
         view.register(AppListItemCell.self, forCellReuseIdentifier: AppListItemCell.identifier)
         view.separatorStyle = .none
         return view
@@ -139,6 +140,9 @@ extension SearchViewController: UITableViewDelegate {
         if tableView == searchHistoryTableView {
             let query = viewModel.searchQueryHistories[indexPath.row]
             viewModel.tapSearchQuery(query: query)
+        } else {
+            let app = viewModel.apps[indexPath.row]
+            coordinator.toAppDetail(from: self, app: app)
         }
     }
 }
