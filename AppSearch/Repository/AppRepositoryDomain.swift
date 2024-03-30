@@ -8,8 +8,11 @@
 import Foundation
 
 final class AppRepositoryDomain: AppRepository {
+    static let shared = AppRepositoryDomain()
     
     private let api = AppRepositoryAPI.shared
+    
+    private init() { }
     
     func get(query: String) async throws -> [App] {
         let response = try await api.get(query: query)
