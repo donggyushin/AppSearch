@@ -8,6 +8,7 @@
 import Foundation
 
 enum CustomError: Error {
+    case failEncoding
     case invalidUrl
     case serverError
 }

@@ -16,6 +16,10 @@
 		70F4429A2BB7D29F0050CCE1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442992BB7D29F0050CCE1 /* APIClient.swift */; };
 		70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4429B2BB7D3B30050CCE1 /* CustomError.swift */; };
 		70F442A12BB7DADE0050CCE1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A02BB7DADE0050CCE1 /* App.swift */; };
+		70F442A32BB7E0730050CCE1 /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A22BB7E0730050CCE1 /* AppRepository.swift */; };
+		70F442A62BB7E0A60050CCE1 /* AppSearchResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A52BB7E0A60050CCE1 /* AppSearchResponse.swift */; };
+		70F442A82BB7E0E50050CCE1 /* AppRepositoryAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A72BB7E0E50050CCE1 /* AppRepositoryAPI.swift */; };
+		70F442AA2BB7E2250050CCE1 /* AppRepositoryDomain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A92BB7E2250050CCE1 /* AppRepositoryDomain.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +34,10 @@
 		70F442992BB7D29F0050CCE1 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		70F4429B2BB7D3B30050CCE1 /* CustomError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		70F442A02BB7DADE0050CCE1 /* App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = App.swift; sourceTree = "<group>"; };
+		70F442A22BB7E0730050CCE1 /* AppRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepository.swift; sourceTree = "<group>"; };
+		70F442A52BB7E0A60050CCE1 /* AppSearchResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppSearchResponse.swift; sourceTree = "<group>"; };
+		70F442A72BB7E0E50050CCE1 /* AppRepositoryAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryAPI.swift; sourceTree = "<group>"; };
+		70F442A92BB7E2250050CCE1 /* AppRepositoryDomain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRepositoryDomain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +62,7 @@
 		702DBF512BB7CE2A002BB1D6 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				70F442A42BB7E09C0050CCE1 /* API */,
 				702DBF532BB7CE45002BB1D6 /* CoreData */,
 				70F4429E2BB7D90E0050CCE1 /* Domain */,
 			);
@@ -120,6 +129,9 @@
 		70F4429D2BB7D8360050CCE1 /* Repository */ = {
 			isa = PBXGroup;
 			children = (
+				70F442A22BB7E0730050CCE1 /* AppRepository.swift */,
+				70F442A72BB7E0E50050CCE1 /* AppRepositoryAPI.swift */,
+				70F442A92BB7E2250050CCE1 /* AppRepositoryDomain.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -130,6 +142,14 @@
 				70F442A02BB7DADE0050CCE1 /* App.swift */,
 			);
 			path = Domain;
+			sourceTree = "<group>";
+		};
+		70F442A42BB7E09C0050CCE1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				70F442A52BB7E0A60050CCE1 /* AppSearchResponse.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,13 +222,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				70F442A82BB7E0E50050CCE1 /* AppRepositoryAPI.swift in Sources */,
 				702DBF502BB7CCF3002BB1D6 /* SearchViewController.swift in Sources */,
 				7071DC022BB7C54C0037BC1F /* AppSearch.xcdatamodeld in Sources */,
 				7071DBF82BB7C54C0037BC1F /* AppDelegate.swift in Sources */,
 				70F4429A2BB7D29F0050CCE1 /* APIClient.swift in Sources */,
+				70F442AA2BB7E2250050CCE1 /* AppRepositoryDomain.swift in Sources */,
 				7071DBFA2BB7C54C0037BC1F /* SceneDelegate.swift in Sources */,
 				70F442A12BB7DADE0050CCE1 /* App.swift in Sources */,
+				70F442A62BB7E0A60050CCE1 /* AppSearchResponse.swift in Sources */,
 				70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */,
+				70F442A32BB7E0730050CCE1 /* AppRepository.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

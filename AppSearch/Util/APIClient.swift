@@ -15,7 +15,7 @@ final class APIClient {
     
     private init() { }
     
-    func request<T: Codable>(method: Method = .get, url: String, body: Codable? = nil, additionalHeaders: [String: String]? = nil) async throws -> T {
+    func request<T: Decodable>(method: Method = .get, url: String, body: Codable? = nil, additionalHeaders: [String: String]? = nil) async throws -> T {
         guard let url = URL(string: url.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "") else { throw CustomError.invalidUrl }
         
         var headers = self.defaultHeaders
