@@ -9,7 +9,7 @@ import Combine
 
 final class SearchViewModel {
     private let appRepository: AppRepository
-    private var cancellables: Set<AnyCancellable> = []
+    var cancellables: Set<AnyCancellable> = []
     
     @Published private(set) var apps: [App] = []
     @Published private(set) var loading = false

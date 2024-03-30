@@ -19,6 +19,8 @@
 		7085A5C62BB7F3FA00D5294D /* AppRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A22BB7E0730050CCE1 /* AppRepository.swift */; };
 		7085A5C72BB7F40100D5294D /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A02BB7DADE0050CCE1 /* App.swift */; };
 		7085A5C92BB7FB7000D5294D /* AppListItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7085A5C82BB7FB7000D5294D /* AppListItemCell.swift */; };
+		7085A5CE2BB7FCD800D5294D /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 7085A5CD2BB7FCD800D5294D /* SnapKit */; };
+		7085A5D02BB7FCDD00D5294D /* SDWebImageSwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7085A5CF2BB7FCDD00D5294D /* SDWebImageSwiftUI */; };
 		70F4429A2BB7D29F0050CCE1 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442992BB7D29F0050CCE1 /* APIClient.swift */; };
 		70F4429C2BB7D3B30050CCE1 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F4429B2BB7D3B30050CCE1 /* CustomError.swift */; };
 		70F442A12BB7DADE0050CCE1 /* App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70F442A02BB7DADE0050CCE1 /* App.swift */; };
@@ -71,6 +73,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7085A5D02BB7FCDD00D5294D /* SDWebImageSwiftUI in Frameworks */,
+				7085A5CE2BB7FCD800D5294D /* SnapKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -132,6 +136,7 @@
 				7071DBF62BB7C54C0037BC1F /* AppSearch */,
 				7085A5BC2BB7F35E00D5294D /* AppSearchTests */,
 				7071DBF52BB7C54C0037BC1F /* Products */,
+				7085A5CC2BB7FCD800D5294D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -163,6 +168,13 @@
 				7085A5BD2BB7F35E00D5294D /* AppSearchViewModelTests.swift */,
 			);
 			path = AppSearchTests;
+			sourceTree = "<group>";
+		};
+		7085A5CC2BB7FCD800D5294D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		70F442982BB7D28D0050CCE1 /* Util */ = {
@@ -216,6 +228,10 @@
 			dependencies = (
 			);
 			name = AppSearch;
+			packageProductDependencies = (
+				7085A5CD2BB7FCD800D5294D /* SnapKit */,
+				7085A5CF2BB7FCDD00D5294D /* SDWebImageSwiftUI */,
+			);
 			productName = AppSearch;
 			productReference = 7071DBF42BB7C54C0037BC1F /* AppSearch.app */;
 			productType = "com.apple.product-type.application";
@@ -266,6 +282,10 @@
 				Base,
 			);
 			mainGroup = 7071DBEB2BB7C54C0037BC1F;
+			packageReferences = (
+				7085A5CA2BB7FC9000D5294D /* XCRemoteSwiftPackageReference "SnapKit" */,
+				7085A5CB2BB7FCA100D5294D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */,
+			);
 			productRefGroup = 7071DBF52BB7C54C0037BC1F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -592,6 +612,38 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		7085A5CA2BB7FC9000D5294D /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		7085A5CB2BB7FCA100D5294D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImageSwiftUI";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		7085A5CD2BB7FCD800D5294D /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7085A5CA2BB7FC9000D5294D /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		7085A5CF2BB7FCDD00D5294D /* SDWebImageSwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7085A5CB2BB7FCA100D5294D /* XCRemoteSwiftPackageReference "SDWebImageSwiftUI" */;
+			productName = SDWebImageSwiftUI;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		7071DC002BB7C54C0037BC1F /* AppSearch.xcdatamodeld */ = {

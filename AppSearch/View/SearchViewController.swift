@@ -11,6 +11,13 @@ final class SearchViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private let viewModel = SearchViewModel(appRepository: AppRepositoryDomain.shared)
     
+    private lazy var tableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .plain)
+        view.dataSource = self
+        view.register(AppListItemCell.self, forCellReuseIdentifier: AppListItemCell.identifier)
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -20,10 +27,24 @@ final class SearchViewController: UIViewController {
         navigationItem.searchController = searchController
         definesPresentationContext = true
         configUI()
+        bind()
     }
     
     private func configUI() {
         view.backgroundColor = .systemBackground
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    private func bind() {
+        viewModel.$apps
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                self.tableView.reloadData()
+            }
+            .store(in: &viewModel.cancellables)
     }
 }
 
@@ -36,5 +57,18 @@ extension SearchViewController: UISearchResultsUpdating {
 extension SearchViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         viewModel.tapEnter()
+    }
+}
+
+extension SearchViewController: UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        viewModel.apps.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: AppListItemCell.identifier) as? AppListItemCell ?? AppListItemCell()
+        let app = viewModel.apps[indexPath.row]
+        cell.configUI(app: app)
+        return cell
     }
 }
