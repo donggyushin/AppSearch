@@ -60,7 +60,6 @@ final class SearchViewModel {
     func tapCancel() {
         apps = []
         searchQuery = ""
-        searchQueryForBinding = ""
     }
     
     private func bind() {

@@ -47,12 +47,12 @@ final class SearchViewController: UIViewController {
         view.backgroundColor = .systemBackground
         view.addSubview(appsTableView)
         appsTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
         view.addSubview(searchHistoryTableView)
         searchHistoryTableView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+            make.edges.equalTo(view.safeAreaLayoutGuide)
         }
         
         view.addSubview(loadingIndicator)
