@@ -10,6 +10,8 @@ import Foundation
 struct App: Decodable {
     let artistId: Int
     let artistName: String
+    let artworkUrl100: String
+    let artworkUrl60: String
     let artworkUrl512: String
     let averageUserRating: CGFloat
     let contentAdvisoryRating: String
