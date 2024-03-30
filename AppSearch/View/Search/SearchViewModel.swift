@@ -56,14 +56,6 @@ final class SearchViewModel {
         updateSearchQuery.send(query)
     }
     
-    func setSearchQueryHistories(searchQuery: String, allSearchQueryHistories: [String]) -> [String] {
-        guard searchQuery.isEmpty == false else {
-            return allSearchQueryHistories
-        }
-        
-        return allSearchQueryHistories.filter({ $0.lowercased().contains(searchQuery.lowercased()) })
-    }
-    
     private func bind() {
         $searchQuery
             .combineLatest($allSearchQueryHistories)
@@ -97,5 +89,13 @@ final class SearchViewModel {
             }
             
         }
+    }
+    
+    private func setSearchQueryHistories(searchQuery: String, allSearchQueryHistories: [String]) -> [String] {
+        guard searchQuery.isEmpty == false else {
+            return allSearchQueryHistories
+        }
+        
+        return allSearchQueryHistories.filter({ $0.lowercased().contains(searchQuery.lowercased()) })
     }
 }
