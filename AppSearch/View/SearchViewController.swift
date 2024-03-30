@@ -11,7 +11,7 @@ final class SearchViewController: UIViewController {
     private let searchController = UISearchController(searchResultsController: nil)
     private let viewModel = SearchViewModel(appRepository: AppRepositoryDomain.shared)
     
-    private lazy var tableView: UITableView = {
+    private lazy var appsTableView: UITableView = {
         let view = UITableView(frame: .zero, style: .plain)
         view.dataSource = self
         view.register(AppListItemCell.self, forCellReuseIdentifier: AppListItemCell.identifier)
@@ -31,8 +31,8 @@ final class SearchViewController: UIViewController {
     
     private func configUI() {
         view.backgroundColor = .systemBackground
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints { make in
+        view.addSubview(appsTableView)
+        appsTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
@@ -41,7 +41,7 @@ final class SearchViewController: UIViewController {
         viewModel.$apps
             .receive(on: DispatchQueue.main)
             .sink { _ in
-                self.tableView.reloadData()
+                self.appsTableView.reloadData()
             }
             .store(in: &viewModel.cancellables)
     }
