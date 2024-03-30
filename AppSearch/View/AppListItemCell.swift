@@ -52,10 +52,21 @@ final class AppListItemCell: UITableViewCell {
         return view
     }()
     
+    private lazy var starRatingView: StarRatingView = {
+        let view = StarRatingView()
+        return view
+    }()
+    
+    private lazy var starRatingViewContainer: UIStackView = {
+        let view = UIStackView(arrangedSubviews: [starRatingView, UIView()])
+        view.axis = .horizontal
+        return view
+    }()
+    
     private lazy var verticalStackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [appTitleSection])
+        let view = UIStackView(arrangedSubviews: [appTitleSection, starRatingViewContainer])
         view.axis = .vertical
-        view.spacing = 20
+        view.spacing = 10
         return view
     }()
     
@@ -76,6 +87,7 @@ final class AppListItemCell: UITableViewCell {
         iconView.sd_setImage(with: URL(string: app.artworkUrl100))
         nameView.text = app.trackName
         genresView.text = app.genres.joined(separator: ",")
+        starRatingView.set(rating: app.averageUserRating)
     }
     
     private func configUI() {
