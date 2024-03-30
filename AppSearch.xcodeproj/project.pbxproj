@@ -13,6 +13,7 @@
 		7019422F2BB8543E00E74F83 /* Divider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7019422E2BB8543E00E74F83 /* Divider.swift */; };
 		701942312BB8574400E74F83 /* DetailNewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701942302BB8574400E74F83 /* DetailNewsView.swift */; };
 		701942352BB8597C00E74F83 /* DetailInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 701942342BB8597C00E74F83 /* DetailInfoView.swift */; };
+		701942362BB85C7100E74F83 /* Coordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70E40D342BB8465200D7FAD4 /* Coordinator.swift */; };
 		702DBF502BB7CCF3002BB1D6 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 702DBF4F2BB7CCF3002BB1D6 /* SearchViewController.swift */; };
 		7071DBF82BB7C54C0037BC1F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071DBF72BB7C54C0037BC1F /* AppDelegate.swift */; };
 		7071DBFA2BB7C54C0037BC1F /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7071DBF92BB7C54C0037BC1F /* SceneDelegate.swift */; };
@@ -444,6 +445,7 @@
 			files = (
 				7085A5C52BB7F3C100D5294D /* SearchViewModel.swift in Sources */,
 				7085A5C72BB7F40100D5294D /* App.swift in Sources */,
+				701942362BB85C7100E74F83 /* Coordinator.swift in Sources */,
 				7085A5C62BB7F3FA00D5294D /* AppRepository.swift in Sources */,
 				7085A5DB2BB8158F00D5294D /* AppTests.swift in Sources */,
 				7085A5BE2BB7F35E00D5294D /* AppSearchViewModelTests.swift in Sources */,
