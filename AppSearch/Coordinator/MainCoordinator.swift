@@ -16,6 +16,6 @@ final class MainCoordinator: Coordinator {
     }
     
     func toAppDetail(from: UIViewController, app: App) {
-        print("navigate to app detail controller")
+        navigationController.pushViewController(DetailViewController(app: app), animated: true)
     }
 }
