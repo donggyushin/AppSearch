@@ -26,9 +26,7 @@ final class SearchViewModel {
     
     init(appRepository: AppRepository) {
         self.appRepository = appRepository
-        
         allSearchQueryHistories = (try? appRepository.getSearchHistory()) ?? []
-        
         bind()
     }
     
@@ -37,6 +35,7 @@ final class SearchViewModel {
     }
     
     func tapEnter() {
+        try? appRepository.postSearchHistory(query: searchQuery)
         Task {
             do {
                 guard loading == false else { return }

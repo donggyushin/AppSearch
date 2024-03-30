@@ -19,6 +19,12 @@ final class SearchViewController: UIViewController {
         return view
     }()
     
+    private lazy var searchHistoryTableView: UITableView = {
+        let view = UITableView(frame: .zero, style: .plain)
+        view.dataSource = self
+        return view
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
@@ -35,6 +41,11 @@ final class SearchViewController: UIViewController {
         appsTableView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
+        
+        view.addSubview(searchHistoryTableView)
+        searchHistoryTableView.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
     }
     
     private func bind() {
@@ -42,6 +53,29 @@ final class SearchViewController: UIViewController {
             .receive(on: DispatchQueue.main)
             .sink { _ in
                 self.appsTableView.reloadData()
+            }
+            .store(in: &viewModel.cancellables)
+        
+        viewModel.$searchQueryHistories
+            .receive(on: DispatchQueue.main)
+            .sink { query in
+                self.searchHistoryTableView.reloadData()
+            }
+            .store(in: &viewModel.cancellables)
+        
+        viewModel
+            .$renderingMode
+            .removeDuplicates()
+            .receive(on: DispatchQueue.main)
+            .sink { mode in
+                switch mode {
+                case .apps:
+                    self.searchHistoryTableView.isHidden = true
+                    self.appsTableView.isHidden = false
+                case .searchHistory:
+                    self.searchHistoryTableView.isHidden = false
+                    self.appsTableView.isHidden = true
+                }
             }
             .store(in: &viewModel.cancellables)
     }
@@ -61,13 +95,26 @@ extension SearchViewController: UISearchBarDelegate {
 
 extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        viewModel.apps.count
+        if tableView == searchHistoryTableView {
+            return viewModel.searchQueryHistories.count
+        } else {
+            return viewModel.apps.count
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AppListItemCell.identifier) as? AppListItemCell ?? AppListItemCell()
-        let app = viewModel.apps[indexPath.row]
-        cell.configUI(app: app)
-        return cell
+        if tableView == searchHistoryTableView {
+            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell") ?? UITableViewCell()
+            let searchQuery = viewModel.searchQueryHistories[indexPath.row]
+            cell.textLabel?.text = searchQuery
+            cell.imageView?.image = .init(systemName: "magnifyingglass")
+            cell.imageView?.tintColor = .gray
+            return cell
+        } else {
+            let cell = tableView.dequeueReusableCell(withIdentifier: AppListItemCell.identifier) as? AppListItemCell ?? AppListItemCell()
+            let app = viewModel.apps[indexPath.row]
+            cell.configUI(app: app)
+            return cell
+        }
     }
 }
