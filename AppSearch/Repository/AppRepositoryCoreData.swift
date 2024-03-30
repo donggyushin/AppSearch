@@ -17,7 +17,9 @@ final class AppRepositoryCoreData {
     
     func get() throws -> [SearchHistory] {
         guard let context else { throw CustomError.unknown }
-        return try context.fetch(SearchHistory.fetchRequest())
+        let fetchRequest = SearchHistory.fetchRequest()
+        fetchRequest.sortDescriptors = [.init(key: "createdAt", ascending: false)]
+        return try context.fetch(fetchRequest)
     }
     
     func post(query: String) throws {
