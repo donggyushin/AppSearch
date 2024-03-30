@@ -19,10 +19,10 @@ struct App: Decodable {
     let formattedPrice: String
     let genres: [String]
     let languageCodesISO2A: [String]
-    let minimumOsVersion: Int
+    let minimumOsVersion: String
     let price: Int
     let releaseDate: String
-    let releaseNotes: String
+    let releaseNotes: String?
     let screenshotUrls: [String]
     let sellerName: String
     let trackName: String
