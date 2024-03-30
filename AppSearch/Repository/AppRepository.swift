@@ -9,4 +9,6 @@ import Foundation
 
 protocol AppRepository {
     func get(query: String) async throws -> [App]
+    func getSearchHistory() throws -> [String]
+    func postSearchHistory(query: String) throws
 }
