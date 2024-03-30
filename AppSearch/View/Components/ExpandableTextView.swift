@@ -8,8 +8,8 @@
 import UIKit
 import SnapKit
 
-class ExpandableTextView: UIView {
-    private let descriptionLabel = UILabel()
+final class ExpandableTextView: UIView {
+    private let descriptionLabel = PrimaryLabel()
     
     private lazy var moreButton: UIButton = {
         let view = UIButton(type: .system)

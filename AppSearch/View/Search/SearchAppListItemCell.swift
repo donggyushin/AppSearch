@@ -23,18 +23,9 @@ final class AppListItemCell: UITableViewCell {
         return view
     }()
     
-    private lazy var nameView: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: UIFont.systemFontSize)
-        return view
-    }()
+    private lazy var nameView = PrimaryLabel()
     
-    private lazy var genresView: UILabel = {
-        let view = UILabel()
-        view.font = .systemFont(ofSize: UIFont.smallSystemFontSize)
-        view.textColor = .secondaryLabel
-        return view
-    }()
+    private lazy var genresView = SecondaryLabel()
     
     private lazy var labelsContainerView: UIStackView = {
         let view = UIStackView(arrangedSubviews: [nameView, genresView])

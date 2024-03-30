@@ -27,6 +27,7 @@ struct App: Decodable {
     let releaseNotes: String?
     let screenshotUrls: [String]
     let sellerName: String
+    let trackId: Int
     let trackName: String
     let userRatingCount: Int
     let version: String

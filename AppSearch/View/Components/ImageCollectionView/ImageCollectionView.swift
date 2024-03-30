@@ -52,6 +52,10 @@ final class ImageCollectionView: UIView {
         collectionView.contentInset = inset
     }
     
+    func set(isPagingEnabled: Bool) {
+        collectionView.isPagingEnabled = isPagingEnabled
+    }
+    
     private func configUI() {
         addSubview(collectionView)
         collectionView.snp.makeConstraints { make in
