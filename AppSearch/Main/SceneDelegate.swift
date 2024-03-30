@@ -7,8 +7,6 @@
 
 import UIKit
 
-var coordinator: Coordinator?
-
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -17,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let scene = (scene as? UIWindowScene) else { return }
         window = .init(windowScene: scene)
         let navigationController = UINavigationController(rootViewController: SearchViewController())
-        coordinator = MainCoordinator(navigationController: navigationController)
+        coordinator.navigationController = navigationController
         window?.rootViewController = navigationController
 //        window?.rootViewController = TestViewController()
         window?.makeKeyAndVisible()

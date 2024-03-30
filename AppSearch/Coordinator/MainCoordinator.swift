@@ -7,15 +7,13 @@
 
 import UIKit
 
+var coordinator: Coordinator = MainCoordinator()
+
 final class MainCoordinator: Coordinator {
     
-    let navigationController: UINavigationController
-    
-    init(navigationController: UINavigationController) {
-        self.navigationController = navigationController
-    }
+    var navigationController: UINavigationController?
     
     func toAppDetail(from: UIViewController, app: App) {
-        navigationController.pushViewController(DetailViewController(app: app), animated: true)
+        navigationController?.pushViewController(DetailViewController(app: app), animated: true)
     }
 }
