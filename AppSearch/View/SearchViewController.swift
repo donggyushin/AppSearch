@@ -15,6 +15,7 @@ final class SearchViewController: UIViewController {
         let view = UITableView(frame: .zero, style: .plain)
         view.dataSource = self
         view.register(AppListItemCell.self, forCellReuseIdentifier: AppListItemCell.identifier)
+        view.separatorStyle = .none
         return view
     }()
     
@@ -22,10 +23,8 @@ final class SearchViewController: UIViewController {
         super.viewDidLoad()
         searchController.searchResultsUpdater = self
         searchController.searchBar.delegate = self
-//        searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "Search Apps"
         navigationItem.searchController = searchController
-        definesPresentationContext = true
         configUI()
         bind()
     }

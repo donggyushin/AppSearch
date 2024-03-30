@@ -40,7 +40,7 @@ final class AppListItemCell: UITableViewCell {
         let view = UIStackView(arrangedSubviews: [nameView, genresView])
         view.alignment = .leading
         view.axis = .vertical
-        view.spacing = 8 
+        view.spacing = 5
         return view
     }()
     
@@ -79,6 +79,7 @@ final class AppListItemCell: UITableViewCell {
     }
     
     private func configUI() {
+        selectionStyle = .none
         addSubview(verticalStackView)
         verticalStackView.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(20)
