@@ -21,8 +21,14 @@ final class DetailViewController: UIViewController {
         return view
     }()
     
+    private lazy var preview: Preview = {
+        let view = Preview()
+        view.set(images: app.screenshotUrls)
+        return view
+    }()
+    
     private lazy var verticalStackView: UIStackView = {
-        let view = UIStackView(arrangedSubviews: [headerView, UIView()])
+        let view = UIStackView(arrangedSubviews: [headerView, Divider(), preview, UIView()])
         view.axis = .vertical
         return view
     }()
