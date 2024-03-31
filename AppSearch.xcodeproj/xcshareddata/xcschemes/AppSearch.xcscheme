@@ -63,12 +63,13 @@
             ReferencedContainer = "container:AppSearch.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
-      <CommandLineArguments>
-         <CommandLineArgument
-            argument = "IDEPreferLogStreaming=YES"
+      <EnvironmentVariables>
+         <EnvironmentVariable
+            key = "IDEPreferLogStreaming=YES"
+            value = ""
             isEnabled = "YES">
-         </CommandLineArgument>
-      </CommandLineArguments>
+         </EnvironmentVariable>
+      </EnvironmentVariables>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
